@@ -1,0 +1,51 @@
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password);
+// Check connection
+if (!$conn) {
+die("Connection failed: " . mysqli_connect_error());
+}
+//creation of database
+sql4 = "CREATE DATABASE myDB";
+if ($conn->query($sql4) === TRUE) {
+    echo "Database created successfully";
+} else {
+    echo "Error creating database: " . $conn->error;
+}
+
+//sql to create table
+$sql1 = "CREATE TABLE Records (
+registration_no INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(30) NOT NULL,
+semester VARCHAR(30) NOT NULL,
+social INT(10)
+science INT(10)
+math INT(10)
+total INT(10)
+Percencentage INT(10)
+)";
+if (mysqli_query($conn, $sql1)) {
+echo "Table created successfully";
+}
+else {
+echo "Error creating table: " . mysqli_error($conn);
+
+}
+$registration_no= mysqli_real_escape_string($conn, $_REQUEST['registration_no']);
+$name = mysqli_real_escape_string($conn, $_REQUEST['name']);
+$semester = mysqli_real_escape_string($conn, $_REQUEST['semester']);
+ $social = mysqli_real_escape_string($conn, $_REQUEST['social']);
+ $science = mysqli_real_escape_string($conn, $_REQUEST['science']);
+ $math = mysqli_real_escape_string($conn, $_REQUEST['math']);
+
+$sql3 = "INSERT INTO persons (registration_no, name, semester, social, science, math) VALUES ('$id','$name','$class', '$social','$science','$math')";
+if(mysqli_query($conn, $sql3)){
+echo "Records added successfully.";
+20
+21
+22 } else{
+echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+}

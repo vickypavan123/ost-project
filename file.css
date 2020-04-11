@@ -1,0 +1,21 @@
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.ih{
+    width:50%;
+    float:right;
+     border:1px solid black;
+     padding:20px 20px 20px 20px ;
+
+}
+.container{
+    float:left;
+     width:40%;
+     border:1px solid black;
+     padding:20px 20px 20px 20px ;
+
+    }
+    body{
+         background-image:url("2.jpg");
+    }
